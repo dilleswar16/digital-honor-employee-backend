@@ -71,7 +71,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 		if(emp.isPresent() && !(emp.get().getPassword().equals(employee.getPassword()))) {
 			return emp;
 		}
-		if(emp.isEmpty()) {
+		if(!emp.isPresent()) {
 //			System.out.println("Inside");
 			return Optional.ofNullable(new Employee());
 			
